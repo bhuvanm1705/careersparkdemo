@@ -1,0 +1,1121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Beginner Learning | Career Spark</title>
+  <link rel="icon" type="image/png" href="logo-png.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../../css/animate.css">
+  <link rel="stylesheet" href="../../../css/icomoon.css">
+  <link rel="stylesheet" href="../../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../../css/magnific-popup.css">
+  <link rel="stylesheet" href="../../../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../../../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../../../css/flexslider.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+
+  <script src="../../../js/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+
+<div class="fh5co-loader"></div>
+
+<div id="page">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fh5co-nav">
+  <div class="top-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2">
+          <div id="fh5co-logo">
+            <a href="../../../index.html">
+              <img src="../../../logo-transparent-png.png" class="logo-img">
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-10 text-right menu-1">
+          <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../explore.html">Explore</a></li>
+            <li class="active"><a href="../../../courses.html">Courses</a></li>
+            <li><a href="../../../pages/dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= ADVANCED QUIZ SECTION ================= -->
+<div id="fh5co-learning" style="padding: 80px 0; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); min-height: 100vh;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="advanced-quiz" class="quiz-wrapper">
+          <div class="quiz-header">
+            <div class="quiz-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h1 class="quiz-title">Python Advanced Quiz</h1>
+            <p class="quiz-subtitle">Master advanced Python concepts including generators, decorators, async programming, and architectural patterns!</p>
+            <div class="quiz-stats">
+              <div class="stat-item">
+                <span class="stat-number">10</span>
+                <span class="stat-label">Questions</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="timeRemaining">20:00</span>
+                <span class="stat-label">Time Left</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">60%</span>
+                <span class="stat-label">Pass Rate</span>
+              </div>
+            </div>
+          </div>
+  
+          <form id="quizForm" class="quiz-form">
+  
+            <!-- Q1 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">01</span>
+                <h3 class="question-text">What happens when a function hits yield?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q1" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Function terminates and memory clears</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q1" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Function pauses and state is saved</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q1" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">Returns all remaining values</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q1" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Raises StopIteration immediately</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+  
+            <!-- Q2 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">02</span>
+                <h3 class="question-text">What is the correct way to apply multiple decorators?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q2" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Tuple after @</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q2" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Stack on separate lines</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q2" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">Comma-separated on one line</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q2" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Decorators cannot be chained</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">03</span>
+                <h3 class="question-text">What is the purpose of await in asyncio?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q3" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Start a new thread</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q3" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Pause coroutine until task completes</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q3" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">Return result to main thread</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q3" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Define async function</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">04</span>
+                <h3 class="question-text">Which methods are required for an iterator?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q4" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">__iter__ and __next__</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q4" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">__start__ and __end__</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q4" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">__loop__</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q4" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">__call__</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">05</span>
+                <h3 class="question-text">What is a coroutine?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q5" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Runs in a separate process</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q5" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Can be paused and resumed</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q5" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">Shared global variable</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q5" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Recursive function</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q6 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">06</span>
+                <h3 class="question-text">Why use functools.wraps?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q6" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Speed up execution</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q6" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Preserve name & docstring</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q6" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">Convert to generator</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q6" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Handle exceptions</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q7 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">07</span>
+                <h3 class="question-text">What is the purpose of asyncio.gather()?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q7" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Sort results</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q7" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Run coroutines concurrently</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q7" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">Create new event loops</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q7" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Prevent await usage</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q8 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">08</span>
+                <h3 class="question-text">What is a closure?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q8" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Automatic file close</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q8" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Inner function with outer scope access</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q8" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">End of a loop</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q8" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Deletes class instance</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q9 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">09</span>
+                <h3 class="question-text">Generator vs list comprehension?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q9" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Generators use brackets</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q9" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Generators yield items lazily</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q9" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">No difference</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q9" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Only math usage</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Q10 -->
+            <div class="quiz-question">
+              <div class="question-header">
+                <span class="question-number">10</span>
+                <h3 class="question-text">What is the setup phase of a context manager?</h3>
+              </div>
+              <div class="options-grid">
+                <label class="option-card">
+                  <input type="radio" name="q10" value="a">
+                  <span class="option-content">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">__init__</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q10" value="b">
+                  <span class="option-content">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">__enter__</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q10" value="c">
+                  <span class="option-content">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">__exit__</span>
+                  </span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="q10" value="d">
+                  <span class="option-content">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">__open__</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="submit-section">
+              <button type="button" class="submit-btn" onclick="submitAdvancedQuiz()">
+                <i class="fas fa-brain"></i> Submit Advanced Quiz
+              </button>
+            </div>
+  
+    </form>
+  </div>
+  
+  
+  <!-- SCORECARD ALERT -->
+<div id="scoreCard" class="result-overlay hidden">
+    <div class="result-card">
+  
+      <div class="result-header">
+        📊 Quiz Result
+      </div>
+  
+      <div class="result-body">
+        <h3 id="finalScoreText"></h3>
+        <p class="score-subtext">Review your answers below</p>
+  
+        <div id="answerBreakdown" class="answer-list"></div>
+      </div>
+  
+     <div class="result-footer hidden" id="nextActions">
+  <a href="../../../courses.html" class="btn btn-primary btn-lg">
+    📚 Go to Courses
+  </a>
+  <a href="../../../pages/dashboard.html" class="btn btn-success btn-lg">
+    📊 Go to Dashboard
+  </a>
+</div>
+
+<div class="result-footer hidden" id="retryAction">
+  <button class="btn btn-danger btn-lg" onclick="retryQuiz()">
+    🔁 Retry Quiz
+  </button>
+</div>
+
+  
+    </div>
+  </div>
+  
+  
+  
+
+<!-- FOOTER -->
+<footer id="fh5co-footer" role="contentinfo" style="background:#1f2933; color:#fff;">
+    <div class="container">
+      <div class="row">
+  
+        <!-- LEFT -->
+        <div class="col-md-6">
+          <h4 style="color:#fff;">Career Spark</h4>
+          <p style="color:#ccc;">
+            Learn. Evolve. Succeed.  
+            Building industry-ready skills through structured learning.
+          </p>
+        </div>
+  
+        <!-- RIGHT -->
+        <div class="col-md-6 text-right">
+          <p style="color:#ccc; margin-top:30px;">
+            &copy; 2025 Career Spark. All Rights Reserved.
+          </p>
+        </div>
+  
+      </div>
+    </div>
+  </footer>
+  
+
+</div>
+
+<!-- JS -->
+<script src="../../../js/jquery.min.js"></script>
+<script src="../../../js/bootstrap.min.js"></script>
+<script src="../../../js/jquery.waypoints.min.js"></script>
+<script src="../../../js/jquery.stellar.min.js"></script>
+<script src="../../../js/owl.carousel.min.js"></script>
+<script src="../../../js/jquery.flexslider-min.js"></script>
+<script src="../../../js/jquery.magnific-popup.min.js"></script>
+<script src="../../../js/main.js"></script>
+<script>
+    function markLessonComplete() {
+      const user = JSON.parse(localStorage.getItem("careerSparkUser"));
+      if (!user) return;
+    
+      const course = user.enrolledCourses.find(c => c.course === "Python");
+      if (course) {
+        course.beginnerLearning = true;
+        localStorage.setItem("careerSparkUser", JSON.stringify(user));
+      }
+    
+      // Show modal
+      $('#completionModal').modal('show');
+    }
+    </script>
+    
+
+<style>
+    #fh5co-logo .logo-img {
+            max-height: 90px;
+            /* Adjust this value to control the size of your logo */
+            width: 200px;
+            /* Maintains the image's aspect ratio */
+            display: block;
+            /* Removes extra space below the image */
+        }
+
+        /* Optional: Ensure the link container doesn't have conflicting styles */
+        #fh5co-logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+.learning-sidebar {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 110px;
+}
+
+.learning-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.learning-sidebar ul li a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.learning-sidebar ul li a:hover {
+  background: #5cb85c;
+  color: #fff;
+}
+
+.code-box {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  overflow-x: auto;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+</style>
+<style>
+    /* Advanced Quiz Wrapper */
+    .quiz-wrapper {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      padding: 0;
+      animation: fadeIn 1s ease-in;
+      overflow: hidden;
+    }
+
+    /* Advanced Quiz Header */
+    .quiz-header {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .quiz-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .quiz-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .quiz-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Timer Animation */
+    #timeRemaining.warning {
+      color: #ff6b35 !important;
+      animation: pulse 1s infinite;
+    }
+
+    #timeRemaining.danger {
+      color: #e74c3c !important;
+      animation: pulse 0.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* Advanced Quiz Form */
+    .quiz-form {
+      padding: 2rem;
+    }
+
+    .quiz-question {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-left: 5px solid #e74c3c;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-question:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .question-number {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-right: 1rem;
+    }
+
+    .question-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin: 0;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .option-card {
+      background: white;
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .option-card:hover {
+      border-color: #e74c3c;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+    }
+
+    .option-card input[type="radio"] {
+      display: none;
+    }
+
+    .option-card input[type="radio"]:checked + .option-content {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+    }
+
+    .option-content {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .option-letter {
+      background: #f8f9fa;
+      color: #e74c3c;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-right: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .option-card input[type="radio"]:checked + .option-content .option-letter {
+      background: rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    .option-text {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    /* Advanced Submit Button */
+    .submit-section {
+      text-align: center;
+      padding: 2rem;
+      background: #f8f9fa;
+      margin-top: 2rem;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .quiz-stats {
+        gap: 1.5rem;
+      }
+      
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-title {
+        font-size: 2rem;
+      }
+      
+      .question-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .question-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
+    </style>
+    <style>
+        /* Overlay */
+        .result-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.45);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+        }
+        
+        /* Card */
+        .result-card {
+          background: #ffffff;
+          width: 90%;
+          max-width: 600px;
+          border-radius: 16px;
+          box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+          animation: popIn 0.6s ease;
+          overflow: hidden;
+        }
+        
+        /* Header */
+        .result-header {
+          background: linear-gradient(135deg, #4CAF50, #2e7d32);
+          color: #fff;
+          padding: 20px;
+          font-size: 24px;
+          text-align: center;
+          font-weight: 700;
+        }
+        
+        /* Body */
+        .result-body {
+          padding: 25px;
+          text-align: center;
+        }
+        
+        .result-body h3 {
+          font-size: 26px;
+          margin-bottom: 5px;
+        }
+        
+        .score-subtext {
+          color: #666;
+          margin-bottom: 20px;
+        }
+        
+        /* Answer list */
+        .answer-list {
+          text-align: left;
+          max-height: 260px;
+          overflow-y: auto;
+        }
+        
+        .answer-list p {
+          padding: 8px 12px;
+          border-radius: 8px;
+          margin-bottom: 8px;
+          font-weight: 500;
+        }
+        
+        .answer-list .correct {
+          background: #e8f5e9;
+          color: #2e7d32;
+        }
+        
+        .answer-list .wrong {
+          background: #ffebee;
+          color: #c62828;
+        }
+        
+        .answer-list .skipped {
+          background: #fffde7;
+          color: #f9a825;
+        }
+        
+        /* Footer */
+        .result-footer {
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          margin-top: 1rem;
+        }
+
+        /* Main Footer Alignment */
+        #fh5co-footer {
+          margin-top: 2rem;
+          padding: 2rem 0;
+        }
+        
+        /* Animations */
+        @keyframes popIn {
+          from {
+            transform: scale(0.8);
+            opacity: 0;
+          }
+          to {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+        
+        .hidden {
+          display: none;
+        }
+        </style>
+        
+    
+        <script>
+            // Advanced Quiz Timer functionality
+            let timeLeft = 20 * 60; // 20 minutes in seconds
+            let timerInterval;
+
+            function startTimer() {
+              timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                
+                if (timeLeft <= 0) {
+                  clearInterval(timerInterval);
+                  submitAdvancedQuiz();
+                }
+              }, 1000);
+            }
+
+            function updateTimerDisplay() {
+              const minutes = Math.floor(timeLeft / 60);
+              const seconds = timeLeft % 60;
+              const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+              const timerElement = document.getElementById('timeRemaining');
+              
+              timerElement.textContent = display;
+              
+              // Add warning classes
+              if (timeLeft <= 120) { // 2 minutes
+                timerElement.className = 'stat-number danger';
+              } else if (timeLeft <= 600) { // 10 minutes
+                timerElement.className = 'stat-number warning';
+              }
+            }
+
+            function submitAdvancedQuiz() {
+              clearInterval(timerInterval);
+              
+              const answers = {
+                q1: "b", q2: "b", q3: "b", q4: "a", q5: "b",
+                q6: "b", q7: "b", q8: "b", q9: "b", q10: "b"
+              };
+            
+              let score = 0;
+              let breakdownHTML = "";
+            
+              Object.keys(answers).forEach((q, index) => {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const qNum = index + 1;
+            
+                if (!selected) {
+                  breakdownHTML += `<p class="skipped">❔ Q${qNum} – Not Attempted</p>`;
+                } else if (selected.value === answers[q]) {
+                  score++;
+                  breakdownHTML += `<p class="correct">✔ Q${qNum} – Correct</p>`;
+                } else {
+                  breakdownHTML += `<p class="wrong">✖ Q${qNum} – Wrong</p>`;
+                }
+              });
+            
+              document.getElementById("quizForm").style.display = "none";
+              document.getElementById("scoreCard").classList.remove("hidden");
+            
+              document.getElementById("finalScoreText").innerHTML =
+                `You scored <strong>${score} / 10</strong>`;
+            
+              document.getElementById("answerBreakdown").innerHTML = breakdownHTML;
+            
+              if (score >= 6) {
+                // Mark advanced quiz as completed in localStorage
+                const user = JSON.parse(localStorage.getItem("careerSparkUser"));
+                if (user) {
+                  let course = user.enrolledCourses.find(c => c.course === "Python");
+                  if (!course) {
+                    course = {
+                      course: "Python",
+                      beginner: { course: false, game: false, quiz: false },
+                      intermediate: { course: false, game: false, quiz: false },
+                      advanced: { course: false, game: false, quiz: false },
+                      practiceCompleted: false,
+                      certificateIssued: false
+                    };
+                    user.enrolledCourses.push(course);
+                  }
+                  course.advanced.quiz = true;
+                  localStorage.setItem("careerSparkUser", JSON.stringify(user));
+                }
+
+                setTimeout(() => {
+                  document.getElementById("nextActions").classList.remove("hidden");
+                }, 5000);
+              } else {
+                setTimeout(() => {
+                  document.getElementById("retryAction").classList.remove("hidden");
+                }, 3000);
+              }
+            }
+
+            // Start timer when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+              startTimer();
+            });
+            </script>
+            
+            
+            <script>
+                function retryQuiz() {
+                  // Hide scorecard
+                  document.getElementById("scoreCard").classList.add("hidden");
+                
+                  // Reset actions
+                  document.getElementById("nextActions").classList.add("hidden");
+                  document.getElementById("retryAction").classList.add("hidden");
+                
+                  // Reset quiz form
+                  document.getElementById("quizForm").reset();
+                  document.getElementById("quizForm").style.display = "block";
+                
+                  // Scroll back to quiz
+                  document.getElementById("beginner-quiz").scrollIntoView({ behavior: "smooth" });
+                }
+                </script>
+                
+            
+    
+  
+
+</body>
+</html>

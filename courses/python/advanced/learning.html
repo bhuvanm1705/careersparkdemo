@@ -1,0 +1,761 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Beginner Learning | Career Spark</title>
+  <link rel="icon" type="image/png" href="logo-png.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../../css/animate.css">
+  <link rel="stylesheet" href="../../../css/icomoon.css">
+  <link rel="stylesheet" href="../../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../../css/magnific-popup.css">
+  <link rel="stylesheet" href="../../../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../../../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../../../css/flexslider.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+
+  <script src="../../../js/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+
+<div class="fh5co-loader"></div>
+
+<div id="page">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fh5co-nav">
+  <div class="top-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2">
+          <div id="fh5co-logo">
+            <a href="../../../index.html">
+              <img src="../../../logo-transparent-png.png" class="logo-img">
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-10 text-right menu-1">
+          <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../explore.html">Explore</a></li>
+            <li class="active"><a href="../../../courses.html">Courses</a></li>
+            <li><a href="../../../pages/dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= ADVANCED LEARNING ================= -->
+<div id="fh5co-learning" style="padding: 80px 0; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); min-height: 100vh;">
+  <div class="container">
+    <!-- Learning Header -->
+    <div class="learning-header">
+      <div class="learning-icon">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h1 class="learning-title">Advanced Python Mastery</h1>
+      <p class="learning-subtitle">Master advanced Python concepts including generators, decorators, async programming, and architectural patterns for enterprise-level development</p>
+    </div>
+
+    <div class="row">
+      <!-- SIDEBAR -->
+      <div class="col-md-3">
+        <div class="learning-sidebar">
+          <div class="sidebar-header">
+            <i class="fas fa-brain"></i>
+            <h4>Advanced Topics</h4>
+          </div>
+          <ul class="sidebar-nav">
+            <li><a href="#intro" class="nav-link"><i class="fas fa-info-circle"></i> Overview</a></li>
+            <li><a href="#generators" class="nav-link"><i class="fas fa-memory"></i> Generators</a></li>
+            <li><a href="#decorators" class="nav-link"><i class="fas fa-magic"></i> Decorators</a></li>
+            <li><a href="#asyncio" class="nav-link"><i class="fas fa-sync-alt"></i> Async Programming</a></li>
+            <li><a href="#advanced" class="nav-link"><i class="fas fa-cogs"></i> Advanced Internals</a></li>
+          </ul>
+          <div class="progress-section">
+            <h5><i class="fas fa-chart-line"></i> Progress</h5>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+            <span class="progress-text">0% Complete</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="col-md-9">
+
+       <!-- OVERVIEW -->
+<!-- OVERVIEW -->
+<section id="intro">
+    <h2>Advanced Python Overview</h2>
+    <p>
+      The Advanced tier is designed to transform developers into software architects
+      capable of writing high-performance, concurrent, and highly abstracted code.
+    </p>
+    <p>
+      At this level, learners explore Python’s deeper mechanics, focusing on optimization,
+      abstraction, and concurrency for real-world, large-scale systems.
+    </p>
+    <hr>
+  </section>
+  
+  <!-- GENERATORS -->
+  <section id="generators">
+    <h2>Generators and Lazy Evaluation</h2>
+    <p>
+      Generators provide a memory-efficient way to iterate over large datasets.
+      Unlike regular functions, generators use the <code>yield</code> keyword
+      to produce values one at a time.
+    </p>
+    <p>
+      This approach is known as <strong>lazy evaluation</strong>,
+      where values are generated only when requested.
+    </p>
+  
+    <div class="code-box">
+  <pre><code>
+  def count_up(n):
+      for i in range(n):
+          yield i
+  
+  for num in count_up(5):
+      print(num)
+  </code></pre>
+    </div>
+  
+    <p>
+      Generators are essential for processing large files or data streams
+      without exhausting system memory.
+    </p>
+    <hr>
+  </section>
+  
+  <!-- DECORATORS -->
+  <section id="decorators">
+    <h2>Decorators and Behavioral Modification</h2>
+    <p>
+      Decorators are a powerful design pattern used to modify the behavior
+      of functions or classes without altering their source code.
+    </p>
+    <p>
+      They work by wrapping a function inside another function.
+    </p>
+  
+    <div class="code-box">
+  <pre><code>
+  def logger(func):
+      def wrapper():
+          print("Function called")
+          func()
+      return wrapper
+  
+  @logger
+  def greet():
+      print("Hello")
+  
+  greet()
+  </code></pre>
+    </div>
+  
+    <p>
+      Advanced decorators often accept arguments and use
+      <code>functools.wraps</code> to preserve function metadata.
+    </p>
+    <hr>
+  </section>
+  
+  <!-- ASYNCIO -->
+  <section id="asyncio">
+    <h2>Asynchronous Programming with asyncio</h2>
+    <p>
+      Asynchronous programming allows Python to perform non-blocking I/O operations.
+      This is especially useful for network requests and high-latency tasks.
+    </p>
+    <p>
+      Unlike multithreading, asyncio uses cooperative multitasking
+      driven by an event loop.
+    </p>
+  
+    <div class="code-box">
+  <pre><code>
+  import asyncio
+  
+  async def fetch_data():
+      await asyncio.sleep(2)
+      print("Data received")
+  
+  asyncio.run(fetch_data())
+  </code></pre>
+    </div>
+  
+    <p>
+      The keywords <code>async</code> and <code>await</code>
+      define coroutines that pause execution while waiting for I/O.
+    </p>
+    <hr>
+  </section>
+  
+  <!-- ADVANCED INTERNALS -->
+  <section id="advanced">
+    <h2>Advanced Python Internals</h2>
+    <p>
+      Advanced Python development includes understanding how the language
+      manages resources, classes, and execution flow.
+    </p>
+    <p>
+      Context managers ensure safe acquisition and release of resources
+      using the <code>with</code> statement.
+    </p>
+  
+    <div class="code-box">
+  <pre><code>
+  class FileManager:
+      def __enter__(self):
+          print("Opening resource")
+          return self
+  
+      def __exit__(self, exc_type, exc_val, exc_tb):
+          print("Closing resource")
+  
+  with FileManager():
+      print("Using resource")
+  </code></pre>
+    </div>
+  
+    <p>
+      Metaprogramming enables dynamic class creation and modification
+      using tools such as <code>type()</code> and metaclasses.
+    </p>
+  </section>
+  <button class="btn btn-info" onclick="showVideoSuggestions()">
+    📺 Recommended Python Videos
+  </button>
+  
+  
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center" style="margin:70px 0;">
+    <button class="btn btn-success btn-lg" onclick="markLessonComplete()">
+      ✔ Mark Lesson as Complete
+    </button>
+  </div>
+  
+
+<!-- FOOTER -->
+<footer id="fh5co-footer" role="contentinfo" style="background:#1f2933; color:#fff;">
+    <div class="container">
+      <div class="row">
+  
+        <!-- LEFT -->
+        <div class="col-md-6">
+          <h4 style="color:#fff;">Career Spark</h4>
+          <p style="color:#ccc;">
+            Learn. Evolve. Succeed.  
+            Building industry-ready skills through structured learning.
+          </p>
+        </div>
+  
+        <!-- RIGHT -->
+        <div class="col-md-6 text-right">
+          <p style="color:#ccc; margin-top:30px;">
+            &copy; 2025 Career Spark. All Rights Reserved.
+          </p>
+        </div>
+  
+      </div>
+    </div>
+  </footer>
+  
+
+</div>
+
+<!-- JS -->
+<script src="../../../js/jquery.min.js"></script>
+<script src="../../../js/bootstrap.min.js"></script>
+<script src="../../../js/jquery.waypoints.min.js"></script>
+<script src="../../../js/jquery.stellar.min.js"></script>
+<script src="../../../js/owl.carousel.min.js"></script>
+<script src="../../../js/jquery.flexslider-min.js"></script>
+<script src="../../../js/jquery.magnific-popup.min.js"></script>
+<script src="../../../js/main.js"></script>
+<script>
+    function markLessonComplete() {
+      const user = JSON.parse(localStorage.getItem("careerSparkUser"));
+      if (!user) return;
+    
+      // Find or create course entry
+      let course = user.enrolledCourses.find(c => c.course === "Python");
+      if (!course) {
+        course = {
+          course: "Python",
+          beginner: { course: false, game: false, quiz: false },
+          intermediate: { course: false, game: false, quiz: false },
+          advanced: { course: false, game: false, quiz: false },
+          practiceCompleted: false,
+          certificateIssued: false
+        };
+        user.enrolledCourses.push(course);
+      }
+      
+      // Mark advanced course as completed
+      course.advanced.course = true;
+      localStorage.setItem("careerSparkUser", JSON.stringify(user));
+    
+      // Show modal
+      $('#completionModal').modal('show');
+    }
+    </script>
+    <script>
+        function showVideoSuggestions() {
+          $('#videoModal').modal('show');
+        }
+        </script>
+        
+    
+
+<style>
+    #fh5co-logo .logo-img {
+            max-height: 90px;
+            /* Adjust this value to control the size of your logo */
+            width: 200px;
+            /* Maintains the image's aspect ratio */
+            display: block;
+            /* Removes extra space below the image */
+        }
+
+        /* Optional: Ensure the link container doesn't have conflicting styles */
+        #fh5co-logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+/* Advanced Learning Header */
+.learning-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.learning-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.learning-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.learning-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Advanced Sidebar Styling */
+.learning-sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 110px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.sidebar-header i {
+  font-size: 1.5rem;
+  color: #e74c3c;
+  margin-right: 0.5rem;
+}
+
+.sidebar-header h4 {
+  margin: 0;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: #495057;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link i {
+  margin-right: 0.75rem;
+  width: 20px;
+  color: #e74c3c;
+}
+
+.nav-link:hover {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  transform: translateX(5px);
+  text-decoration: none;
+}
+
+.nav-link:hover i {
+  color: white;
+}
+
+.progress-section {
+  padding-top: 1rem;
+  border-top: 2px solid #e9ecef;
+}
+
+.progress-section h5 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.progress-section h5 i {
+  margin-right: 0.5rem;
+  color: #e74c3c;
+}
+
+.progress-bar {
+  background: #e9ecef;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Advanced Content Wrapper */
+.content-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Advanced Lesson Sections */
+.lesson-section {
+  padding: 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.lesson-section:last-child {
+  border-bottom: none;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-icon {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.section-badge {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-content {
+  margin-left: 75px;
+}
+
+.lead-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.section-content p {
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.section-content code {
+  background: #f8f9fa;
+  color: #e83e8c;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Advanced Code Container */
+.code-container {
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.code-header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.copy-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.copy-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.code-box {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  margin: 0;
+  font-family: 'Fira Code', Consolas, monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.code-box pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.code-box code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Advanced Completion Section */
+.completion-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.completion-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.completion-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .learning-title {
+    font-size: 2rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .section-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .section-content {
+    margin-left: 0;
+  }
+  
+  .code-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+</style>
+<!-- COMPLETION MODAL -->
+<div class="modal fade" id="completionModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">🎉 Lesson Completed!</h4>
+        </div>
+  
+        <div class="modal-body text-center">
+          <p>You’ve successfully completed this lesson.</p>
+          <p>What would you like to do next?</p>
+        </div>
+  
+        <div class="modal-footer text-center">
+          <a href="game.html" class="btn btn-info">
+            🎮 Play Game
+          </a>
+          <a href="../../../course.html?course=Python" class="btn btn-default">
+            📚 Back to Course
+          </a>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="videoModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">📺 Recommended YouTube Videos for Python</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <div class="modal-body">
+          <ul style="font-size:16px; line-height:1.8;">
+            <li>
+              <strong>Corey Schafer</strong> – Clear and in-depth Python tutorials  
+              <br>
+              <a href="https://www.youtube.com/c/CoreySchafer" target="_blank">
+                https://www.youtube.com/c/CoreySchafer
+              </a>
+            </li>
+  
+            <li>
+              <strong>freeCodeCamp</strong> – Complete Python courses  
+              <br>
+              <a href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank">
+                Python Full Course (Beginner)
+              </a>
+            </li>
+  
+            <li>
+              <strong>Programming with Mosh</strong> – Practical Python concepts  
+              <br>
+              <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" target="_blank">
+                Python Tutorial for Beginners
+              </a>
+            </li>
+  
+            <li>
+              <strong>Tech With Tim</strong> – Intermediate & Advanced Python  
+              <br>
+              <a href="https://www.youtube.com/c/TechWithTim" target="_blank">
+                https://www.youtube.com/c/TechWithTim
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,1083 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python Treasure Hunt | Career Spark</title>
+  <link rel="icon" type="image/png" href="logo-png.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../../css/animate.css">
+  <link rel="stylesheet" href="../../../css/icomoon.css">
+  <link rel="stylesheet" href="../../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../../css/magnific-popup.css">
+  <link rel="stylesheet" href="../../../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../../../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../../../css/flexslider.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <script src="../../../js/modernizr-2.6.2.min.js"></script>
+  <style>
+    /* Original Career Spark Styles */
+    #fh5co-logo .logo-img {
+      max-height: 90px;
+      width: 200px;
+      display: block;
+    }
+
+    #fh5co-logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    /* Game Specific Styles */
+    body {
+      background: #ffffff;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Game Container */
+    #fh5co-learning {
+      padding: 60px 0;
+      min-height: calc(100vh - 160px);
+    }
+
+    .game-screen {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 800px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .game-screen::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #ffd700, #ff6b35, #ffd700);
+      animation: shimmer 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    /* Welcome Screen */
+    .welcome-screen {
+      display: block;
+    }
+
+    .game-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+      animation: glow 2s ease-in-out infinite alternate;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      to {
+        text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.3);
+      }
+    }
+
+    .game-subtitle {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 3rem;
+      text-align: center;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .treasure-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: bounce 2s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    .icon-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .icon-item:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .icon-item:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    .icon-item:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-10px);
+      }
+
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .icon-item i {
+      font-size: 6rem;
+      margin-bottom: 1.5rem;
+      color: #ff6b35;
+      transition: all 0.3s ease;
+    }
+
+    .icon-item:hover i {
+      transform: scale(1.1);
+      color: #ff8c42;
+    }
+
+    .icon-item span {
+      font-size: 1.4rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* Question Screen */
+    .question-screen {
+      display: none;
+    }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+
+    .question-header:hover {
+      opacity: 0.8;
+    }
+
+    .question-icon {
+      font-size: 4rem;
+      color: #ff6b35;
+    }
+
+    .question-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 2.8rem;
+      color: #ffffff;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .progress-bar {
+      background: #e0e0e0;
+      height: 8px;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, #ffd700, #ff6b35);
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .scenario-box {
+      background: linear-gradient(135deg, #fff8dc, #fffacd);
+      border-left: 5px solid #ff6b35;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .scenario-text {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .question-text {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .options-container {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .option-btn {
+      background: linear-gradient(135deg, #fff8dc, #fffacd);
+      border: 2px solid #ffd700;
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1.3rem;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .option-btn:hover {
+      border-color: #ff6b35;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+    }
+
+    .option-btn.selected {
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      color: white;
+      border-color: #ff6b35;
+    }
+
+    .option-btn.correct {
+      background: linear-gradient(135deg, #ffffff, #f8f8f8);
+      color: #28a745;
+      border-color: #ffffff;
+      font-weight: 600;
+    }
+
+    .option-btn.incorrect {
+      background: linear-gradient(135deg, #dc3545, #e74c3c);
+      color: white;
+      border-color: #dc3545;
+    }
+
+    /* Audio Controls */
+    .audio-controls {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .audio-btn {
+      background: rgba(255, 107, 53, 0.1);
+      border: 2px solid #ff6b35;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .audio-btn:hover {
+      background: #ff6b35;
+      color: white;
+    }
+
+    .audio-btn.active {
+      background: #ff6b35;
+      color: white;
+    }
+
+    /* Subtitles */
+    .subtitles {
+      position: fixed;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      max-width: 80%;
+      text-align: center;
+      display: none;
+      z-index: 1001;
+    }
+
+    /* Buttons */
+    .game-btn {
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+    }
+
+    .game-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+      color: white;
+    }
+
+    .game-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .game-btn-secondary {
+      background: linear-gradient(135deg, #6c757d, #868e96);
+    }
+
+    /* Score Screen */
+    .score-screen {
+      display: none;
+    }
+
+    .score-animation {
+      margin: 2rem 0;
+    }
+
+    .score-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffd700, #ff6b35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .score-text {
+      font-family: 'Orbitron', monospace;
+      font-size: 3rem;
+      font-weight: 900;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .result-message {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .success-message {
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .fail-message {
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideUp 0.5s ease forwards;
+      animation-delay: 2s;
+      flex-wrap: wrap;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .game-title {
+        font-size: 2rem;
+      }
+
+      .treasure-icons {
+        gap: 1rem;
+      }
+
+      .icon-item i {
+        font-size: 2rem;
+      }
+
+      .game-screen {
+        padding: 2rem 1rem;
+      }
+
+      .question-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Hidden class */
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fh5co-loader"></div>
+  <div id="page">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fh5co-nav">
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-2">
+              <div id="fh5co-logo">
+                <a href="../../../index.html">
+                  <img src="../../../logo-transparent-png.png" class="logo-img">
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-10 text-right menu-1">
+              <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../../explore.html">Explore</a></li>
+                <li class="active"><a href="../../../courses.html">Courses</a></li>
+                <li><a href="../../../pages/dashboard.html">Dashboard</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= GAME SECTION ================= -->
+    <div id="fh5co-learning">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="game-screen">
+              <!-- Audio Controls -->
+              <div class="audio-controls">
+                <div class="audio-btn" id="voiceToggle" title="Toggle Voice">
+                  <i class="fas fa-volume-up"></i>
+                </div>
+                <div class="audio-btn" id="subtitleToggle" title="Toggle Subtitles">
+                  <i class="fas fa-closed-captioning"></i>
+                </div>
+              </div>
+
+              <!-- Welcome Screen -->
+              <div class="welcome-screen" id="welcomeScreen">
+                <h1 class="game-title">The Python Treasure Hunt</h1>
+                <p class="game-subtitle">Embark on an epic adventure through the Amazon rainforest and discover the
+                  secrets of Python programming!</p>
+
+                <div class="treasure-icons">
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-map"></i>
+                    <span>Explore</span>
+                  </div>
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-key"></i>
+                    <span>Unlock</span>
+                  </div>
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-water"></i>
+                    <span>Cross</span>
+                  </div>
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-stairs"></i>
+                    <span>Climb</span>
+                  </div>
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-gem"></i>
+                    <span>Discover</span>
+                  </div>
+                </div>
+
+                <div class="scenario-box">
+                  <p class="scenario-text">
+                    <strong>Your Mission:</strong> You are an explorer in the Amazon rainforest searching for a
+                    legendary hidden temple.
+                    Each stage of your journey requires solving Python programming puzzles to progress.
+                    Use your coding knowledge to navigate through 5 challenging tasks and claim the treasure!
+                  </p>
+                </div>
+
+                <button class="game-btn" onclick="startGame()">
+                  <i class="fas fa-play"></i> Begin Your Adventure
+                </button>
+              </div>
+
+              <!-- Question Screen -->
+              <div class="question-screen" id="questionScreen">
+                <div class="question-header" onclick="repeatQuestion()">
+                  <i class="question-icon" id="questionIcon"></i>
+                  <h2 class="question-title" id="questionTitle"></h2>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="scenario-box">
+                  <p class="scenario-text" id="scenarioText"></p>
+                </div>
+
+                <div class="question-text" id="questionText"></div>
+
+                <div class="options-container" id="optionsContainer"></div>
+
+                <div
+                  style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                  <button class="game-btn game-btn-secondary" onclick="previousQuestion()" id="prevBtn">
+                    <i class="fas fa-arrow-left"></i> Previous
+                  </button>
+                  <span style="color: #666; font-weight: 500;">Question <span id="currentQ">1</span> of 5</span>
+                  <button class="game-btn" onclick="nextQuestion()" id="nextBtn" disabled>
+                    <i class="fas fa-arrow-right"></i> Next
+                  </button>
+                </div>
+              </div>
+
+              <!-- Score Screen -->
+              <div class="score-screen" id="scoreScreen">
+                <h2 class="question-title">Adventure Complete!</h2>
+
+                <div class="score-animation">
+                  <div class="score-circle">
+                    <div class="score-text" id="finalScore">0/5</div>
+                  </div>
+                </div>
+
+                <div class="result-message" id="resultMessage"></div>
+
+                <div class="action-buttons" id="actionButtons">
+                  <!-- Buttons will be added dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtitles -->
+    <div class="subtitles" id="subtitles"></div>
+
+    <!-- FOOTER -->
+    <footer id="fh5co-footer" role="contentinfo" style="background:#1f2933; color:#fff;">
+      <div class="container">
+        <div class="row">
+          <!-- LEFT -->
+          <div class="col-md-6">
+            <h4 style="color:#fff;">Career Spark</h4>
+            <p style="color:#ccc;">Learn. Evolve. Succeed. Building industry-ready skills through structured learning.
+            </p>
+          </div>
+          <!-- RIGHT -->
+          <div class="col-md-6 text-right">
+            <p style="color:#ccc; margin-top:30px;">&copy; 2025 Career Spark. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="../../../js/jquery.min.js"></script>
+  <script src="../../../js/bootstrap.min.js"></script>
+  <script src="../../../js/jquery.waypoints.min.js"></script>
+  <script src="../../../js/jquery.stellar.min.js"></script>
+  <script src="../../../js/owl.carousel.min.js"></script>
+  <script src="../../../js/jquery.flexslider-min.js"></script>
+  <script src="../../../js/jquery.magnific-popup.min.js"></script>
+  <script src="../../../js/main.js"></script>
+
+  <script>
+    // Game State
+    let currentQuestion = 0;
+    let score = 0;
+    let selectedAnswers = [];
+    let voiceEnabled = true;
+    let subtitlesEnabled = true;
+    let currentAudio = null;
+
+    // Game Data
+    const gameData = [
+      {
+        title: "Task 1: The Gateway Code",
+        icon: "fas fa-key",
+        scenario: "You stand before the ancient temple door, covered in mysterious Python symbols. The door requires a variable named 'key' to be set to the integer 42. Only then will the ancient mechanisms unlock the entrance to your treasure hunt.",
+        question: "Which line of code correctly assigns the key to open the temple door?",
+        options: [
+          "key == 42",
+          "key = 42",
+          "42 = key",
+          "key := 42"
+        ],
+        correct: 1,
+        voice: "You stand before the ancient temple door. The door requires a variable named key to be set to the integer 42. Which line of code correctly assigns the key to open the temple door?"
+      },
+      {
+        title: "Task 2: The River Crossing",
+        icon: "fas fa-water",
+        scenario: "A rushing river blocks your path to the temple. To build a bridge, you must calculate the total weight of your supplies. You have food weighing 10 units and water weighing 20 units. The bridge will only support the exact total weight.",
+        question: "Given food = 10 and water = 20, how do you calculate the total weight?",
+        options: [
+          "total = food * water",
+          "total = food - water",
+          "total = food + water",
+          "total = food / water"
+        ],
+        correct: 2,
+        voice: "A rushing river blocks your path. You have food weighing 10 units and water weighing 20 units. Given food equals 10 and water equals 20, how do you calculate the total weight?"
+      },
+      {
+        title: "Task 3: The Path of Decisions",
+        icon: "fas fa-route",
+        scenario: "You reach a mysterious fork in the jungle path. Ancient inscriptions suggest that if you have a map, you should go left to find the temple. Otherwise, you must go right and take the longer route through dangerous terrain.",
+        question: "Which Python structure correctly implements this decision logic?",
+        options: [
+          "while has_map: go_left()",
+          "for map in maps: go_left()",
+          "if has_map: go_left() else: go_right()",
+          "def has_map(): go_left()"
+        ],
+        correct: 2,
+        voice: "You reach a fork in the path. If you have a map, go left, otherwise go right. Which Python structure correctly implements this decision logic?"
+      },
+      {
+        title: "Task 4: The Endless Steps",
+        icon: "fas fa-stairs",
+        scenario: "Before you rise the temple steps, each one inscribed with ancient numbers. To activate the temple's entrance mechanism, you must count from 1 to 5 in the correct sequence. The temple's magic responds only to the proper Python counting method.",
+        question: "Which Python function generates the numbers 1, 2, 3, 4, 5 to climb the temple steps?",
+        options: [
+          "range(5)",
+          "range(1, 5)",
+          "range(1, 6)",
+          "range(0, 5)"
+        ],
+        correct: 2,
+        voice: "You must count from 1 to 5 to climb the temple steps. Which Python function generates the numbers 1, 2, 3, 4, 5?"
+      },
+      {
+        title: "Task 5: The Final Inscription",
+        icon: "fas fa-gem",
+        scenario: "At last, you reach the treasure chamber! The golden chest bears a final puzzle. It requires the length of the word 'GOLD' to unlock. The ancient mechanism counts each letter to verify you are worthy of the treasure within.",
+        question: "What is the result of len('GOLD') to unlock the treasure chest?",
+        options: [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        correct: 1,
+        voice: "You reach the treasure chamber! The chest requires the length of the word GOLD. What is the result of len of GOLD?"
+      }
+    ];
+
+    // Audio and Speech Functions
+    function speak(text) {
+      if (!voiceEnabled) return;
+
+      // Cancel any existing speech
+      if (currentAudio) {
+        speechSynthesis.cancel();
+      }
+
+      // Clear any existing subtitles
+      hideSubtitles();
+
+      currentAudio = new SpeechSynthesisUtterance(text);
+      currentAudio.rate = 0.8;
+      currentAudio.pitch = 1;
+      currentAudio.volume = 0.8;
+
+      if (subtitlesEnabled) {
+        showSubtitles(text);
+      }
+
+      currentAudio.onend = () => {
+        hideSubtitles();
+        currentAudio = null;
+      };
+
+      currentAudio.onerror = () => {
+        hideSubtitles();
+        currentAudio = null;
+      };
+
+      speechSynthesis.speak(currentAudio);
+    }
+
+    function showSubtitles(text) {
+      const subtitles = document.getElementById('subtitles');
+      subtitles.textContent = text;
+      subtitles.style.display = 'block';
+    }
+
+    function hideSubtitles() {
+      document.getElementById('subtitles').style.display = 'none';
+    }
+
+    function stopCurrentAudio() {
+      if (currentAudio) {
+        speechSynthesis.cancel();
+        currentAudio = null;
+      }
+      hideSubtitles();
+    }
+
+    function toggleVoice() {
+      const wasEnabled = voiceEnabled;
+      voiceEnabled = !voiceEnabled;
+      const btn = document.getElementById('voiceToggle');
+      const icon = btn.querySelector('i');
+
+      if (voiceEnabled) {
+        icon.className = 'fas fa-volume-up';
+        btn.classList.add('active');
+        btn.title = 'Turn Off Voice';
+
+        // If we just turned voice on and we're in a question, repeat the current question
+        if (!wasEnabled && document.getElementById('questionScreen').style.display !== 'none') {
+          setTimeout(() => {
+            repeatQuestion();
+          }, 100);
+        }
+      } else {
+        icon.className = 'fas fa-volume-mute';
+        btn.classList.remove('active');
+        btn.title = 'Turn On Voice';
+        stopCurrentAudio();
+      }
+    }
+
+    function toggleSubtitles() {
+      subtitlesEnabled = !subtitlesEnabled;
+      const btn = document.getElementById('subtitleToggle');
+      const icon = btn.querySelector('i');
+
+      if (subtitlesEnabled) {
+        btn.classList.add('active');
+        btn.title = 'Turn Off Subtitles';
+        icon.className = 'fas fa-closed-captioning';
+
+        // If audio is currently playing, show subtitles
+        if (currentAudio && voiceEnabled) {
+          showSubtitles(currentAudio.text);
+        }
+      } else {
+        btn.classList.remove('active');
+        btn.title = 'Turn On Subtitles';
+        icon.className = 'fas fa-closed-captioning';
+        hideSubtitles();
+      }
+    }
+
+    function playWelcomeSound() {
+      speak("Welcome to the Python Treasure Hunt! Click on the icons to explore your adventure tools and begin your coding journey.");
+    }
+
+    function repeatQuestion() {
+      if (currentQuestion >= 0 && currentQuestion < gameData.length) {
+        const question = gameData[currentQuestion];
+
+        // Create full question text with options
+        let fullText = question.voice;
+
+        // Add options to the voice
+        fullText += " The options are: ";
+        question.options.forEach((option, index) => {
+          fullText += `Option ${String.fromCharCode(65 + index)}: ${option}. `;
+        });
+
+        speak(fullText);
+      }
+    }
+
+    // Game Functions
+    function startGame() {
+      document.getElementById('welcomeScreen').style.display = 'none';
+      document.getElementById('questionScreen').style.display = 'block';
+      currentQuestion = 0;
+      score = 0;
+      selectedAnswers = [];
+      showQuestion();
+    }
+
+    function showQuestion() {
+      // FIRST: Stop any existing audio and clear subtitles
+      stopCurrentAudio();
+
+      const question = gameData[currentQuestion];
+
+      // Update progress
+      const progress = ((currentQuestion + 1) / gameData.length) * 100;
+      document.getElementById('progressFill').style.width = progress + '%';
+
+      // Update question content
+      document.getElementById('questionIcon').className = question.icon;
+      document.getElementById('questionTitle').textContent = question.title;
+      document.getElementById('scenarioText').textContent = question.scenario;
+      document.getElementById('questionText').textContent = question.question;
+      document.getElementById('currentQ').textContent = currentQuestion + 1;
+
+      // Create options
+      const container = document.getElementById('optionsContainer');
+      container.innerHTML = '';
+
+      question.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+        btn.onclick = () => selectOption(index);
+        container.appendChild(btn);
+      });
+
+      // Update navigation buttons
+      document.getElementById('prevBtn').style.display = currentQuestion === 0 ? 'none' : 'inline-block';
+      document.getElementById('nextBtn').disabled = true;
+      document.getElementById('nextBtn').innerHTML = currentQuestion === gameData.length - 1 ?
+        '<i class="fas fa-flag-checkered"></i> Finish' :
+        '<i class="fas fa-arrow-right"></i> Next';
+
+      // Speak question with options if voice is enabled (only for current question)
+      setTimeout(() => {
+        if (voiceEnabled) {
+          let fullText = question.voice;
+          fullText += " The options are: ";
+          question.options.forEach((option, index) => {
+            fullText += `Option ${String.fromCharCode(65 + index)}: ${option}. `;
+          });
+          speak(fullText);
+        }
+      }, 500);
+    }
+
+    function selectOption(index) {
+      // Remove previous selections
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.classList.remove('selected');
+      });
+
+      // Select current option
+      document.querySelectorAll('.option-btn')[index].classList.add('selected');
+      selectedAnswers[currentQuestion] = index;
+
+      // Enable next button
+      document.getElementById('nextBtn').disabled = false;
+    }
+
+    function nextQuestion() {
+      if (selectedAnswers[currentQuestion] === undefined) return;
+
+      // FIRST: Stop any audio from current question before proceeding
+      stopCurrentAudio();
+
+      // Show correct answer
+      const question = gameData[currentQuestion];
+      const options = document.querySelectorAll('.option-btn');
+
+      options.forEach((btn, index) => {
+        if (index === question.correct) {
+          btn.classList.add('correct');
+        } else if (index === selectedAnswers[currentQuestion] && index !== question.correct) {
+          btn.classList.add('incorrect');
+        }
+      });
+
+      // Update score
+      if (selectedAnswers[currentQuestion] === question.correct) {
+        score++;
+      }
+
+      // Wait before moving to next question
+      setTimeout(() => {
+        if (currentQuestion < gameData.length - 1) {
+          currentQuestion++;
+          showQuestion();
+        } else {
+          showScore();
+        }
+      }, 1500);
+    }
+
+    function previousQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion();
+
+        // Restore previous selection
+        if (selectedAnswers[currentQuestion] !== undefined) {
+          selectOption(selectedAnswers[currentQuestion]);
+        }
+      }
+    }
+
+    function showScore() {
+      document.getElementById('questionScreen').style.display = 'none';
+      document.getElementById('scoreScreen').style.display = 'block';
+
+      document.getElementById('finalScore').textContent = `${score}/5`;
+
+      const resultMessage = document.getElementById('resultMessage');
+      const actionButtons = document.getElementById('actionButtons');
+
+      if (score >= 3) {
+        // Mark game as completed in localStorage
+        const user = JSON.parse(localStorage.getItem("careerSparkUser"));
+        if (user) {
+          let course = user.enrolledCourses.find(c => c.course === "Python");
+          if (!course) {
+            course = {
+              course: "Python",
+              beginner: { course: false, game: false, quiz: false },
+              intermediate: { course: false, game: false, quiz: false },
+              advanced: { course: false, game: false, quiz: false },
+              practiceCompleted: false,
+              certificateIssued: false
+            };
+            user.enrolledCourses.push(course);
+          }
+          course.beginner.game = true;
+          localStorage.setItem("careerSparkUser", JSON.stringify(user));
+        }
+
+        resultMessage.innerHTML = '<div class="success-message"><i class="fas fa-trophy"></i> Congratulations! You\'ve successfully completed the Python Treasure Hunt and claimed the treasure!</div>';
+
+        setTimeout(() => {
+          actionButtons.innerHTML = `
+                        <button class="game-btn" onclick="window.location.href='quiz.html'">
+                            <i class="fas fa-question-circle"></i> Go to Quiz
+                        </button>
+                        <button class="game-btn game-btn-secondary" onclick="window.location.href='../../../course.html?course=Python'">
+                            <i class="fas fa-book"></i> Back to Course
+                        </button>
+                    `;
+        }, 2000);
+
+        speak("Congratulations! You have successfully completed the Python Treasure Hunt and claimed the treasure!");
+      } else {
+        resultMessage.innerHTML = '<div class="fail-message"><i class="fas fa-times-circle"></i> The treasure remains hidden. Study more and try again to master the Python mysteries!</div>';
+
+        setTimeout(() => {
+          actionButtons.innerHTML = `
+                        <button class="game-btn" onclick="restartGame()">
+                            <i class="fas fa-redo"></i> Play Again
+                        </button>
+                        <button class="game-btn game-btn-secondary" onclick="window.location.href='learning.html'">
+                            <i class="fas fa-book"></i> Study More
+                        </button>
+                    `;
+        }, 2000);
+
+        speak("The treasure remains hidden. Study more and try again to master the Python mysteries!");
+      }
+    }
+
+    function restartGame() {
+      document.getElementById('scoreScreen').style.display = 'none';
+      document.getElementById('welcomeScreen').style.display = 'block';
+      currentQuestion = 0;
+      score = 0;
+      selectedAnswers = [];
+    }
+
+    // Event Listeners
+    document.getElementById('voiceToggle').onclick = toggleVoice;
+    document.getElementById('subtitleToggle').onclick = toggleSubtitles;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('voiceToggle').classList.add('active');
+      document.getElementById('subtitleToggle').classList.add('active');
+    });
+  </script>
+</body>
+
+</html>

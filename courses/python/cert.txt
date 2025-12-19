@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CareerSpark | Python Certificate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 40px 0;
+    background: #f4f6f8;
+    font-family: 'Inter', sans-serif;
+}
+
+.certificate-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.12);
+    overflow: hidden;
+}
+
+.certificate {
+    position: relative;
+    padding: 60px;
+    border: 4px solid #10b981;
+}
+
+.watermark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9rem;
+    font-weight: 800;
+    color: rgba(16,185,129,.05);
+    transform: rotate(-20deg);
+    pointer-events: none;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 55px;
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #10b981;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+.title h1 {
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.title p {
+    color: #6b7280;
+    margin-top: 10px;
+}
+
+/* Body */
+.body {
+    text-align: center;
+}
+
+.student-name {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin: 30px 0;
+    color: #111827;
+}
+
+.body-text {
+    font-size: 1.1rem;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.course {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 30px 0;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.meta {
+    font-size: .95rem;
+    color: #374151;
+}
+
+.signatures {
+    display: flex;
+    gap: 50px;
+}
+
+.signature {
+    text-align: center;
+}
+
+.signature img {
+    height: 60px;
+    object-fit: contain;
+}
+
+.line {
+    width: 180px;
+    border-top: 1px solid #9ca3af;
+    margin: 10px auto;
+}
+
+.signature strong {
+    display: block;
+    margin-top: 5px;
+}
+
+.signature span {
+    font-size: .9rem;
+    color: #6b7280;
+}
+
+/* Controls */
+.controls {
+    padding: 25px;
+    background: #f9fafb;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+}
+
+.controls button {
+    margin: 8px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#10b981,#059669);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    opacity: .9;
+}
+
+@media print {
+    body { background: white; padding: 0; }
+    .controls { display: none; }
+    .certificate-wrapper { box-shadow: none; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="certificate-wrapper">
+<div class="certificate" id="certificate">
+
+<div class="watermark">CareerSpark</div>
+
+<!-- Header -->
+<div class="header">
+    <div class="logo">
+        <!-- Replace logo path -->
+        <img src="logo-transparent-png.png"  alt="CareerSpark Logo">
+    </div>
+    <div class="brand">CareerSpark</div>
+</div>
+
+<!-- Title -->
+<div class="title">
+    <h1>CERTIFICATE OF PARTICIPATION</h1>
+    <p>This certificate is proudly presented to</p>
+</div>
+
+<!-- Body -->
+<div class="body">
+    <div class="student-name" id="studentName">Student Name</div>
+
+    <div class="body-text">
+        for successfully participating in and completing the
+    </div>
+
+    <div class="course">Python Programming Course</div>
+
+    <div class="body-text">
+        conducted by CareerSpark, demonstrating dedication and commitment
+        to learning fundamental Python concepts.
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="meta">
+        <div id="issueDate">Issued: --</div>
+        <div>Certificate ID: <strong id="certId">--</strong></div>
+        <div>Verify: careerspark.com/verify</div>
+    </div>
+
+    <div class="signatures">
+        <div class="signature">
+            <img src="BHUVAN.png"  alt="Bhuvan Signature">
+            <div class="line"></div>
+            <strong>Mandala Bhuvan</strong>
+            <span>AIML Specialist · CareerSpark</span>
+        </div>
+
+        <div class="signature">
+            <img src="VENKAT.png"  alt="Venkat Signature">
+            <div class="line"></div>
+            <strong>Kakarla Venkat Deeraj</strong>
+            <span>Data Analyst · CareerSpark</span>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- Controls -->
+<div class="controls">
+    <button onclick="downloadPNG()">Download PNG</button>
+    <button onclick="downloadJPG()">Download JPG</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+    <button onclick="window.print()">Print</button>
+</div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        initCertificate();
+    });
+    
+    function initCertificate() {
+    const stored = localStorage.getItem("careerSparkUser");
+    const user = stored ? JSON.parse(stored) : null;
+
+    const name = user?.name?.trim() || "Student Name";
+
+    // Persist certificate ID (important)
+    let certId = localStorage.getItem("careerSparkCertId");
+    if (!certId) {
+        certId = "CS-PY-" + Date.now().toString().slice(-6);
+        localStorage.setItem("careerSparkCertId", certId);
+    }
+
+    const date = new Date().toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+
+    document.getElementById("studentName").textContent = name;
+    document.getElementById("certId").textContent = certId;
+    document.getElementById("issueDate").textContent = "Issued: " + date;
+}
+
+async function captureCertificate() {
+    const element = document.getElementById("certificate");
+
+    return await html2canvas(element, {
+        scale: 3,
+        backgroundColor: "#ffffff",
+        useCORS: true,
+        allowTaint: false,
+        imageTimeout: 0
+    });
+}
+
+    
+    /* ===== PNG ===== */
+    async function downloadPNG() {
+    try {
+        const canvas = await captureCertificate();
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "CareerSpark-Python-Certificate.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } catch (e) {
+        console.error(e);
+        alert("PNG download failed. Check console.");
+    }
+}
+
+
+    
+    /* ===== JPG ===== */
+    async function downloadJPG() {
+        try {
+            const canvas = await captureCertificate();
+            const link = document.createElement("a");
+            link.download = "CareerSpark-Python-Certificate.jpg";
+            link.href = canvas.toDataURL("image/jpeg", 0.95);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (e) {
+            alert("JPG download failed");
+            console.error(e);
+        }
+    }
+    
+    /* ===== PDF ===== */
+    async function downloadPDF() {
+        try {
+            const canvas = await captureCertificate();
+            const imgData = canvas.toDataURL("image/png");
+            const { jsPDF } = window.jspdf;
+    
+            const pdf = new jsPDF("landscape", "mm", "a4");
+            const pdfWidth = 297;
+            const pdfHeight = 210;
+    
+            const imgWidth = pdfWidth - 20;
+            const imgHeight = canvas.height * imgWidth / canvas.width;
+    
+            pdf.addImage(
+                imgData,
+                "PNG",
+                (pdfWidth - imgWidth) / 2,
+                (pdfHeight - imgHeight) / 2,
+                imgWidth,
+                imgHeight
+            );
+    
+            pdf.save("CareerSpark-Python-Certificate.pdf");
+        } catch (e) {
+            alert("PDF download failed");
+            console.error(e);
+        }
+    }
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,1029 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>The Automated Library System | Career Spark</title>
+  <link rel="icon" type="image/png" href="logo-png.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../../css/animate.css">
+  <link rel="stylesheet" href="../../../css/icomoon.css">
+  <link rel="stylesheet" href="../../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../../css/magnific-popup.css">
+  <link rel="stylesheet" href="../../../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../../../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../../../css/flexslider.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <script src="../../../js/modernizr-2.6.2.min.js"></script>
+  <style>
+    /* Original Career Spark Styles */
+    #fh5co-logo .logo-img {
+      max-height: 90px;
+      width: 200px;
+      display: block;
+    }
+
+    #fh5co-logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    /* Game Specific Styles */
+    body {
+      background: #ffffff;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Game Container */
+    #fh5co-learning {
+      padding: 60px 0;
+      min-height: calc(100vh - 160px);
+    }
+
+    .game-screen {
+      background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #4a90e2 100%);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 800px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .game-screen::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #4a90e2, #2c5aa0, #4a90e2);
+      animation: shimmer 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* Welcome Screen */
+    .welcome-screen {
+      display: block;
+    }
+
+    .game-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+      animation: glow 2s ease-in-out infinite alternate;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); }
+      to { text-shadow: 2px 2px 20px rgba(74, 144, 226, 0.3); }
+    }
+
+    .game-subtitle {
+      font-size: 1.8rem;
+      color: #e8f4fd;
+      margin-bottom: 3rem;
+      text-align: center;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .treasure-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: bounce 2s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    .icon-item:nth-child(2) { animation-delay: 0.2s; }
+    .icon-item:nth-child(3) { animation-delay: 0.4s; }
+    .icon-item:nth-child(4) { animation-delay: 0.6s; }
+    .icon-item:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    .icon-item i {
+      font-size: 6rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .icon-item:hover i {
+      transform: scale(1.1);
+      color: #e8f4fd;
+    }
+
+    .icon-item span {
+      font-size: 1.4rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Question Screen */
+    .question-screen {
+      display: none;
+    }
+
+    .question-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+
+    .question-header:hover {
+      opacity: 0.8;
+    }
+
+    .question-icon {
+      font-size: 4rem;
+      color: #ffffff;
+    }
+
+    .question-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 2.8rem;
+      color: #ffffff;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .progress-bar {
+      background: #e0e0e0;
+      height: 8px;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, #4a90e2, #2c5aa0);
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .scenario-box {
+      background: linear-gradient(135deg, #e8f4fd, #d1e7fc);
+      border-left: 5px solid #2c5aa0;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .scenario-text {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .question-text {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .options-container {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .option-btn {
+      background: linear-gradient(135deg, #e8f4fd, #d1e7fc);
+      border: 2px solid #4a90e2;
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1.3rem;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .option-btn:hover {
+      border-color: #2c5aa0;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(44, 90, 160, 0.2);
+    }
+
+    .option-btn.selected {
+      background: linear-gradient(135deg, #2c5aa0, #1e3f73);
+      color: white;
+      border-color: #2c5aa0;
+    }
+
+    .option-btn.correct {
+      background: linear-gradient(135deg, #ffffff, #f8f8f8);
+      color: #28a745;
+      border-color: #ffffff;
+      font-weight: 600;
+    }
+
+    .option-btn.incorrect {
+      background: linear-gradient(135deg, #dc3545, #e74c3c);
+      color: white;
+      border-color: #dc3545;
+    }
+
+    /* Audio Controls */
+    .audio-controls {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .audio-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #ffffff;
+    }
+
+    .audio-btn:hover {
+      background: #ffffff;
+      color: #4a90e2;
+    }
+
+    .audio-btn.active {
+      background: #ffffff;
+      color: #4a90e2;
+    }
+
+    /* Subtitles */
+    .subtitles {
+      position: fixed;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      max-width: 80%;
+      text-align: center;
+      display: none;
+      z-index: 1001;
+    }
+
+    /* Buttons */
+    .game-btn {
+      background: linear-gradient(135deg, #2c5aa0, #1e3f73);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+    }
+
+    .game-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
+      color: white;
+    }
+
+    .game-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .game-btn-secondary {
+      background: linear-gradient(135deg, #6c757d, #868e96);
+    }
+
+    /* Score Screen */
+    .score-screen {
+      display: none;
+    }
+
+    .score-animation {
+      margin: 2rem 0;
+    }
+
+    .score-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4a90e2, #2c5aa0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .score-text {
+      font-family: 'Orbitron', monospace;
+      font-size: 3rem;
+      font-weight: 900;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .result-message {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .success-message {
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .fail-message {
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideUp 0.5s ease forwards;
+      animation-delay: 2s;
+      flex-wrap: wrap;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .game-title {
+        font-size: 2rem;
+      }
+      
+      .treasure-icons {
+        gap: 1rem;
+      }
+      
+      .icon-item i {
+        font-size: 2rem;
+      }
+      
+      .game-screen {
+        padding: 2rem 1rem;
+      }
+      
+      .question-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Hidden class */
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fh5co-loader"></div>
+  <div id="page">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fh5co-nav">
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-2">
+              <div id="fh5co-logo">
+                <a href="../../../index.html">
+                  <img src="../../../logo-transparent-png.png" class="logo-img">
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-10 text-right menu-1">
+              <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../../explore.html">Explore</a></li>
+                <li class="active"><a href="../../../courses.html">Courses</a></li>
+                <li><a href="../../../pages/dashboard.html">Dashboard</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= GAME SECTION ================= -->
+    <div id="fh5co-learning">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="game-screen">
+              <!-- Audio Controls -->
+              <div class="audio-controls">
+                <div class="audio-btn" id="voiceToggle" title="Toggle Voice">
+                  <i class="fas fa-volume-up"></i>
+                </div>
+                <div class="audio-btn" id="subtitleToggle" title="Toggle Subtitles">
+                  <i class="fas fa-closed-captioning"></i>
+                </div>
+              </div>
+
+              <!-- Welcome Screen -->
+              <div class="welcome-screen" id="welcomeScreen">
+                <h1 class="game-title">The Automated Library System</h1>
+                <p class="game-subtitle">Step into the role of a system administrator for a digital archive and master intermediate Python concepts!</p>
+                
+                <div class="treasure-icons">
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-code"></i>
+                    <span>Blueprint</span>
+                  </div>
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Handle</span>
+                  </div>
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-sitemap"></i>
+                    <span>Inherit</span>
+                  </div>
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-save"></i>
+                    <span>Save</span>
+                  </div>
+                  <div class="icon-item" onclick="playWelcomeSound()">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Report</span>
+                  </div>
+                </div>
+
+                <div class="scenario-box">
+                  <p class="scenario-text">
+                    <strong>Your Mission:</strong> The central library has lost its manual indexing system. 
+                    You must use intermediate Python concepts to create a book management system that categorizes titles, 
+                    handles missing data, and generates comprehensive reports. Master classes, inheritance, error handling, and file operations!
+                  </p>
+                </div>
+
+                <button class="game-btn" onclick="startGame()">
+                  <i class="fas fa-play"></i> Begin System Administration
+                </button>
+              </div>
+
+              <!-- Question Screen -->
+              <div class="question-screen" id="questionScreen">
+                <div class="question-header" onclick="repeatQuestion()">
+                  <i class="question-icon" id="questionIcon"></i>
+                  <h2 class="question-title" id="questionTitle"></h2>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="scenario-box">
+                  <p class="scenario-text" id="scenarioText"></p>
+                </div>
+
+                <div class="question-text" id="questionText"></div>
+
+                <div class="options-container" id="optionsContainer"></div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                  <button class="game-btn game-btn-secondary" onclick="previousQuestion()" id="prevBtn">
+                    <i class="fas fa-arrow-left"></i> Previous
+                  </button>
+                  <span style="color: #ffffff; font-weight: 500;">Question <span id="currentQ">1</span> of 5</span>
+                  <button class="game-btn" onclick="nextQuestion()" id="nextBtn" disabled>
+                    <i class="fas fa-arrow-right"></i> Next
+                  </button>
+                </div>
+              </div>
+
+              <!-- Score Screen -->
+              <div class="score-screen" id="scoreScreen">
+                <h2 class="question-title">System Administration Complete!</h2>
+                
+                <div class="score-animation">
+                  <div class="score-circle">
+                    <div class="score-text" id="finalScore">0/5</div>
+                  </div>
+                </div>
+
+                <div class="result-message" id="resultMessage"></div>
+
+                <div class="action-buttons" id="actionButtons">
+                  <!-- Buttons will be added dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtitles -->
+    <div class="subtitles" id="subtitles"></div>
+
+    <!-- FOOTER -->
+    <footer id="fh5co-footer" role="contentinfo" style="background:#1f2933; color:#fff;">
+      <div class="container">
+        <div class="row">
+          <!-- LEFT -->
+          <div class="col-md-6">
+            <h4 style="color:#fff;">Career Spark</h4>
+            <p style="color:#ccc;">Learn. Evolve. Succeed. Building industry-ready skills through structured learning.</p>
+          </div>
+          <!-- RIGHT -->
+          <div class="col-md-6 text-right">
+            <p style="color:#ccc; margin-top:30px;">&copy; 2025 Career Spark. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="../../../js/jquery.min.js"></script>
+  <script src="../../../js/bootstrap.min.js"></script>
+  <script src="../../../js/jquery.waypoints.min.js"></script>
+  <script src="../../../js/jquery.stellar.min.js"></script>
+  <script src="../../../js/owl.carousel.min.js"></script>
+  <script src="../../../js/jquery.flexslider-min.js"></script>
+  <script src="../../../js/jquery.magnific-popup.min.js"></script>
+  <script src="../../../js/main.js"></script>
+
+  <script>
+    // Game State
+    let currentQuestion = 0;
+    let score = 0;
+    let selectedAnswers = [];
+    let voiceEnabled = true;
+    let subtitlesEnabled = true;
+    let currentAudio = null;
+
+    // Game Data
+    const gameData = [
+      {
+        title: "Task 1: Creating the Blueprint",
+        icon: "fas fa-code",
+        scenario: "You need to define a Book class with attributes title, author, and isbn. This class will serve as the foundation for your entire library management system. The class must initialize these attributes when a new book object is created.",
+        question: "Which method is used to set these attributes upon creation of a Book class instance?",
+        options: [
+          "__new__",
+          "__init__",
+          "__create__",
+          "__setup__"
+        ],
+        correct: 1,
+        voice: "You need to define a Book class with attributes title, author, and isbn. Which method is used to set these attributes upon creation of a Book class instance?"
+      },
+      {
+        title: "Task 2: Handling the Missing Records",
+        icon: "fas fa-exclamation-triangle",
+        scenario: "When a user searches for an index that doesn't exist in your library system, the application crashes with an IndexError. You need to implement proper error handling to prevent crashes and provide user-friendly feedback.",
+        question: "How do you stop the crash and print 'Not Found' when an IndexError occurs?",
+        options: [
+          "if IndexError: print('Not Found')",
+          "try-except IndexError block",
+          "catch IndexError: print('Not Found')",
+          "handle IndexError with print('Not Found')"
+        ],
+        correct: 1,
+        voice: "When a user searches for an index that doesn't exist, the system crashes with an IndexError. How do you stop the crash and print Not Found when an IndexError occurs?"
+      },
+      {
+        title: "Task 3: The Specialized Archive",
+        icon: "fas fa-sitemap",
+        scenario: "You need to create a DigitalBook class that inherits from the Book class but adds a file_size attribute. This specialized class will handle digital books while maintaining all the functionality of regular books.",
+        question: "What is the correct way to define this inheritance relationship?",
+        options: [
+          "class DigitalBook extends Book:",
+          "class DigitalBook inherits Book:",
+          "class DigitalBook(Book):",
+          "class DigitalBook -> Book:"
+        ],
+        correct: 2,
+        voice: "You need to create a DigitalBook class that inherits from Book but adds a file_size attribute. What is the correct way to define this inheritance relationship?"
+      },
+      {
+        title: "Task 4: Saving the Database",
+        icon: "fas fa-save",
+        scenario: "You need to write the list of books to a file named library.txt. It's crucial that the file is properly closed after writing, even if an error occurs during the write operation. This ensures data integrity and prevents file corruption.",
+        question: "What is the safest way to open the file to ensure it closes properly?",
+        options: [
+          "f = open('library.txt', 'w')",
+          "with open('library.txt', 'w') as f:",
+          "file = open('library.txt', 'w'); file.close()",
+          "open('library.txt', 'w').write()"
+        ],
+        correct: 1,
+        voice: "You need to write the list of books to a file named library.txt. What is the safest way to open the file to ensure it closes properly?"
+      },
+      {
+        title: "Task 5: Generating the ISBN Report",
+        icon: "fas fa-chart-bar",
+        scenario: "You must iterate through a dictionary of books and print those by a specific author. The dictionary contains book ISBNs as keys and book objects as values. You need both the ISBN and the book object to generate the complete report.",
+        question: "Which dictionary method gives you both the keys and values for looping?",
+        options: [
+          ".keys()",
+          ".values()",
+          ".items()",
+          ".pairs()"
+        ],
+        correct: 2,
+        voice: "You must iterate through a dictionary of books and print those by a specific author. Which dictionary method gives you both the keys and values for looping?"
+      }
+    ];
+
+    // Audio and Speech Functions
+    function speak(text) {
+      if (!voiceEnabled) return;
+
+      // Cancel any existing speech
+      if (currentAudio) {
+        speechSynthesis.cancel();
+      }
+
+      // Clear any existing subtitles
+      hideSubtitles();
+
+      currentAudio = new SpeechSynthesisUtterance(text);
+      currentAudio.rate = 0.8;
+      currentAudio.pitch = 1;
+      currentAudio.volume = 0.8;
+
+      if (subtitlesEnabled) {
+        showSubtitles(text);
+      }
+
+      currentAudio.onend = () => {
+        hideSubtitles();
+        currentAudio = null;
+      };
+
+      currentAudio.onerror = () => {
+        hideSubtitles();
+        currentAudio = null;
+      };
+
+      speechSynthesis.speak(currentAudio);
+    }
+
+    function showSubtitles(text) {
+      const subtitles = document.getElementById('subtitles');
+      subtitles.textContent = text;
+      subtitles.style.display = 'block';
+    }
+
+    function hideSubtitles() {
+      document.getElementById('subtitles').style.display = 'none';
+    }
+
+    function stopCurrentAudio() {
+      if (currentAudio) {
+        speechSynthesis.cancel();
+        currentAudio = null;
+      }
+      hideSubtitles();
+    }
+
+    function toggleVoice() {
+      const wasEnabled = voiceEnabled;
+      voiceEnabled = !voiceEnabled;
+      const btn = document.getElementById('voiceToggle');
+      const icon = btn.querySelector('i');
+
+      if (voiceEnabled) {
+        icon.className = 'fas fa-volume-up';
+        btn.classList.add('active');
+        btn.title = 'Turn Off Voice';
+        
+        // If we just turned voice on and we're in a question, repeat the current question
+        if (!wasEnabled && document.getElementById('questionScreen').style.display !== 'none') {
+          setTimeout(() => {
+            repeatQuestion();
+          }, 100);
+        }
+      } else {
+        icon.className = 'fas fa-volume-mute';
+        btn.classList.remove('active');
+        btn.title = 'Turn On Voice';
+        stopCurrentAudio();
+      }
+    }
+
+    function toggleSubtitles() {
+      subtitlesEnabled = !subtitlesEnabled;
+      const btn = document.getElementById('subtitleToggle');
+      const icon = btn.querySelector('i');
+
+      if (subtitlesEnabled) {
+        btn.classList.add('active');
+        btn.title = 'Turn Off Subtitles';
+        icon.className = 'fas fa-closed-captioning';
+        
+        // If audio is currently playing, show subtitles
+        if (currentAudio && voiceEnabled) {
+          showSubtitles(currentAudio.text);
+        }
+      } else {
+        btn.classList.remove('active');
+        btn.title = 'Turn On Subtitles';
+        icon.className = 'fas fa-closed-captioning';
+        hideSubtitles();
+      }
+    }
+
+    function playWelcomeSound() {
+      speak("Welcome to the Automated Library System! You are now a system administrator ready to master intermediate Python concepts.");
+    }
+
+    function repeatQuestion() {
+      if (currentQuestion >= 0 && currentQuestion < gameData.length) {
+        const question = gameData[currentQuestion];
+        
+        // Create full question text with options
+        let fullText = question.voice;
+        
+        // Add options to the voice
+        fullText += " The options are: ";
+        question.options.forEach((option, index) => {
+          fullText += `Option ${String.fromCharCode(65 + index)}: ${option}. `;
+        });
+        
+        speak(fullText);
+      }
+    }
+
+    // Game Functions
+    function startGame() {
+      document.getElementById('welcomeScreen').style.display = 'none';
+      document.getElementById('questionScreen').style.display = 'block';
+      currentQuestion = 0;
+      score = 0;
+      selectedAnswers = [];
+      showQuestion();
+    }
+
+    function showQuestion() {
+      // FIRST: Stop any existing audio and clear subtitles
+      stopCurrentAudio();
+      
+      const question = gameData[currentQuestion];
+
+      // Update progress
+      const progress = ((currentQuestion + 1) / gameData.length) * 100;
+      document.getElementById('progressFill').style.width = progress + '%';
+
+      // Update question content
+      document.getElementById('questionIcon').className = question.icon;
+      document.getElementById('questionTitle').textContent = question.title;
+      document.getElementById('scenarioText').textContent = question.scenario;
+      document.getElementById('questionText').textContent = question.question;
+      document.getElementById('currentQ').textContent = currentQuestion + 1;
+
+      // Create options
+      const container = document.getElementById('optionsContainer');
+      container.innerHTML = '';
+
+      question.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+        btn.onclick = () => selectOption(index);
+        container.appendChild(btn);
+      });
+
+      // Update navigation buttons
+      document.getElementById('prevBtn').style.display = currentQuestion === 0 ? 'none' : 'inline-block';
+      document.getElementById('nextBtn').disabled = true;
+      document.getElementById('nextBtn').innerHTML = currentQuestion === gameData.length - 1 ?
+        '<i class="fas fa-flag-checkered"></i> Finish' :
+        '<i class="fas fa-arrow-right"></i> Next';
+
+      // Speak question with options if voice is enabled (only for current question)
+      setTimeout(() => {
+        if (voiceEnabled) {
+          let fullText = question.voice;
+          fullText += " The options are: ";
+          question.options.forEach((option, index) => {
+            fullText += `Option ${String.fromCharCode(65 + index)}: ${option}. `;
+          });
+          speak(fullText);
+        }
+      }, 500);
+    }
+
+    function selectOption(index) {
+      // Remove previous selections
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.classList.remove('selected');
+      });
+
+      // Select current option
+      document.querySelectorAll('.option-btn')[index].classList.add('selected');
+      selectedAnswers[currentQuestion] = index;
+
+      // Enable next button
+      document.getElementById('nextBtn').disabled = false;
+    }
+
+    function nextQuestion() {
+      if (selectedAnswers[currentQuestion] === undefined) return;
+
+      // FIRST: Stop any audio from current question before proceeding
+      stopCurrentAudio();
+
+      // Show correct answer
+      const question = gameData[currentQuestion];
+      const options = document.querySelectorAll('.option-btn');
+
+      options.forEach((btn, index) => {
+        if (index === question.correct) {
+          btn.classList.add('correct');
+        } else if (index === selectedAnswers[currentQuestion] && index !== question.correct) {
+          btn.classList.add('incorrect');
+        }
+      });
+
+      // Update score
+      if (selectedAnswers[currentQuestion] === question.correct) {
+        score++;
+      }
+
+      // Wait before moving to next question
+      setTimeout(() => {
+        if (currentQuestion < gameData.length - 1) {
+          currentQuestion++;
+          showQuestion();
+        } else {
+          showScore();
+        }
+      }, 1500);
+    }
+
+    function previousQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion();
+
+        // Restore previous selection
+        if (selectedAnswers[currentQuestion] !== undefined) {
+          selectOption(selectedAnswers[currentQuestion]);
+        }
+      }
+    }
+
+    function showScore() {
+      document.getElementById('questionScreen').style.display = 'none';
+      document.getElementById('scoreScreen').style.display = 'block';
+
+      document.getElementById('finalScore').textContent = `${score}/5`;
+
+      const resultMessage = document.getElementById('resultMessage');
+      const actionButtons = document.getElementById('actionButtons');
+
+      if (score >= 3) {
+        // Mark intermediate game as completed in localStorage
+        const user = JSON.parse(localStorage.getItem("careerSparkUser"));
+        if (user) {
+          let course = user.enrolledCourses.find(c => c.course === "Python");
+          if (!course) {
+            course = {
+              course: "Python",
+              beginner: { course: false, game: false, quiz: false },
+              intermediate: { course: false, game: false, quiz: false },
+              advanced: { course: false, game: false, quiz: false },
+              practiceCompleted: false,
+              certificateIssued: false
+            };
+            user.enrolledCourses.push(course);
+          }
+          course.intermediate.game = true;
+          localStorage.setItem("careerSparkUser", JSON.stringify(user));
+        }
+
+        resultMessage.innerHTML = '<div class="success-message"><i class="fas fa-trophy"></i> Congratulations! You\'ve successfully mastered the Automated Library System and intermediate Python concepts!</div>';
+
+        setTimeout(() => {
+          actionButtons.innerHTML = `
+            <button class="game-btn" onclick="window.location.href='quiz.html'">
+              <i class="fas fa-question-circle"></i> Go to Quiz
+            </button>
+            <button class="game-btn game-btn-secondary" onclick="window.location.href='../../../course.html?course=Python'">
+              <i class="fas fa-book"></i> Back to Course
+            </button>
+          `;
+        }, 2000);
+
+        speak("Congratulations! You have successfully mastered the Automated Library System and intermediate Python concepts!");
+      } else {
+        resultMessage.innerHTML = '<div class="fail-message"><i class="fas fa-times-circle"></i> The library system needs more work. Study intermediate concepts and try again!</div>';
+
+        setTimeout(() => {
+          actionButtons.innerHTML = `
+            <button class="game-btn" onclick="restartGame()">
+              <i class="fas fa-redo"></i> Play Again
+            </button>
+            <button class="game-btn game-btn-secondary" onclick="window.location.href='learning.html'">
+              <i class="fas fa-book"></i> Study More
+            </button>
+          `;
+        }, 2000);
+
+        speak("The library system needs more work. Study intermediate concepts and try again!");
+      }
+    }
+
+    function restartGame() {
+      document.getElementById('scoreScreen').style.display = 'none';
+      document.getElementById('welcomeScreen').style.display = 'block';
+      currentQuestion = 0;
+      score = 0;
+      selectedAnswers = [];
+    }
+
+    // Event Listeners
+    document.getElementById('voiceToggle').onclick = toggleVoice;
+    document.getElementById('subtitleToggle').onclick = toggleSubtitles;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('voiceToggle').classList.add('active');
+      document.getElementById('subtitleToggle').classList.add('active');
+    });
+  </script>
+</body>
+</html>
