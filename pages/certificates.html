@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Certificates | CareerSpark</title>
+  <link rel="icon" type="image/png" href="logo-png.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/icomoon.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../css/flexslider.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src="../js/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+
+<div class="fh5co-loader"></div>
+
+<div id="page">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fh5co-nav" role="navigation">
+  <div class="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-right">
+          <p class="site">Learn. Evolve. Succeed.</p>
+          <p class="num">Call: 9988776655</p>
+          <ul class="fh5co-social">
+            <li><a href="#"><i class="icon-twitter2"></i></a></li>
+            <li><a href="#"><i class="icon-dribbble2"></i></a></li>
+            <li><a href="#"><i class="icon-github"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="top-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2">
+          <div id="fh5co-logo">
+            <a href="../index.html">
+              <img src="../logo-transparent-png.png" alt="CareerSpark Logo" class="logo-img">
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-10 text-right menu-1">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../explore.html">Explore</a></li>
+            <li><a href="../features.html">Features</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../research-papers.html">Research Hub</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li class="has-dropdown">
+              <a href="#" class="nav-username">User</a>
+              <ul class="dropdown">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li class="active"><a href="certificates.html">Certificates</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= CERTIFICATES SECTION ================= -->
+<div id="fh5co-certificates" style="padding: 80px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); min-height: 100vh;">
+  <div class="container">
+    
+    <!-- Page Header -->
+    <div class="row text-center">
+      <div class="col-md-12">
+        <div style="font-size: 4rem; margin-bottom: 1rem; color: #667eea;">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: #2c3e50;">
+          My Certificates
+        </h1>
+        <p style="font-size: 1.2rem; color: #6c757d; max-width: 600px; margin: 0 auto;">
+          View and download your earned certificates from completed courses
+        </p>
+      </div>
+    </div>
+
+    <!-- Certificates Grid -->
+    <div class="row" style="margin-top: 60px;">
+      <div class="col-md-12">
+        <div id="certificatesContainer">
+          <!-- Certificates will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="fh5co-footer" role="contentinfo" style="background:#1f2933; color:#fff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4 style="color:#fff;">CareerSpark</h4>
+        <p style="color:#ccc;">
+          Learn. Evolve. Succeed.  
+          Building industry-ready skills through structured learning.
+        </p>
+      </div>
+      <div class="col-md-6 text-right">
+        <p style="color:#ccc; margin-top:30px;">
+          &copy; 2025 CareerSpark. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<!-- JS -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.waypoints.min.js"></script>
+<script src="../js/jquery.stellar.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/jquery.flexslider-min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/main.js"></script>
+
+<script>
+// Check authentication
+if (!localStorage.getItem("careerSparkUser")) {
+  window.location.href = "login.html";
+}
+
+// Load certificates on page load
+document.addEventListener('DOMContentLoaded', function() {
+  loadCertificates();
+  updateUserName();
+});
+
+function updateUserName() {
+  const user = JSON.parse(localStorage.getItem("careerSparkUser"));
+  if (user && user.name) {
+    const usernameElement = document.querySelector('.nav-username');
+    if (usernameElement) {
+      usernameElement.textContent = user.name;
+    }
+  }
+}
+
+function loadCertificates() {
+  const user = JSON.parse(localStorage.getItem("careerSparkUser"));
+  const certificates = JSON.parse(localStorage.getItem('careerSparkCertificates') || '[]');
+  const container = document.getElementById('certificatesContainer');
+  
+  // Filter certificates for current user
+  const userCertificates = certificates.filter(cert => cert.userId === user.email);
+  
+  if (userCertificates.length === 0) {
+    container.innerHTML = `
+      <div class="text-center" style="padding: 60px 20px;">
+        <div style="font-size: 5rem; color: #e9ecef; margin-bottom: 2rem;">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3 style="color: #6c757d; margin-bottom: 1rem;">No Certificates Yet</h3>
+        <p style="color: #adb5bd; margin-bottom: 2rem;">
+          Complete courses to earn certificates and showcase your achievements!
+        </p>
+        <a href="../course.html" class="btn btn-primary btn-lg">
+          <i class="fas fa-book"></i> Browse Courses
+        </a>
+      </div>
+    `;
+    return;
+  }
+  
+  let certificatesHTML = '<div class="row">';
+  
+  userCertificates.forEach(cert => {
+    certificatesHTML += `
+      <div class="col-md-6 col-lg-4">
+        <div class="certificate-card">
+          <div class="certificate-preview">
+            <div class="cert-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <div class="cert-info">
+              <h4>${cert.courseName}</h4>
+              <p class="cert-id">ID: ${cert.id}</p>
+              <p class="cert-date">Completed: ${cert.completionDate}</p>
+              <p class="cert-student">Issued to: ${cert.studentName}</p>
+            </div>
+          </div>
+          <div class="certificate-actions">
+            <button class="btn btn-primary btn-sm" onclick="viewCertificate('${cert.course}')">
+              <i class="fas fa-eye"></i> View
+            </button>
+            <div class="dropdown" style="display: inline-block;">
+              <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                <i class="fas fa-download"></i> Download <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#" onclick="downloadCertificateFormat('${cert.course}', 'png')">PNG</a></li>
+                <li><a href="#" onclick="downloadCertificateFormat('${cert.course}', 'jpg')">JPG</a></li>
+                <li><a href="#" onclick="downloadCertificateFormat('${cert.course}', 'jpeg')">JPEG</a></li>
+                <li><a href="#" onclick="downloadCertificateFormat('${cert.course}', 'pdf')">PDF</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  
+  certificatesHTML += '</div>';
+  container.innerHTML = certificatesHTML;
+}
+
+function viewCertificate(course) {
+  if (course === 'Python Programming') {
+    window.open('../courses/python/certificate.html', '_blank');
+  }
+}
+
+function downloadCertificateFormat(course, format) {
+  if (course === 'Python Programming') {
+    // Open certificate page and trigger download with specific format
+    const certWindow = window.open('../courses/python/certificate.html', '_blank');
+    
+    // Wait for the page to load, then trigger download
+    setTimeout(() => {
+      if (certWindow && certWindow.downloadCertificate) {
+        // Create a fake event object for the download function
+        const fakeEvent = { target: { innerHTML: '', disabled: false } };
+        certWindow.event = fakeEvent;
+        certWindow.downloadCertificate(format);
+      }
+    }, 3000);
+  }
+}
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "../index.html";
+}
+</script>
+
+<style>
+/* Logo Styles */
+#fh5co-logo .logo-img {
+  max-height: 90px;
+  width: 200px;
+  display: block;
+}
+
+#fh5co-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Certificate Card Styles */
+.certificate-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-color: #667eea;
+}
+
+.certificate-preview {
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.cert-icon {
+  font-size: 4rem;
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.cert-info h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.cert-id {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.cert-date {
+  font-size: 0.95rem;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.cert-student {
+  font-size: 1rem;
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.certificate-actions {
+  padding: 20px;
+  background: #f8f9fa;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+}
+
+.certificate-actions .btn {
+  margin: 0 5px;
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 8px 20px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certificate-card {
+    margin-bottom: 20px;
+  }
+  
+  .cert-info h4 {
+    font-size: 1.2rem;
+  }
+  
+  .certificate-actions .btn {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+</style>
+
+</body>
+</html>

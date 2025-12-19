@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Dashboard &mdash; CareerSpark</title>
+	<link rel="icon" type="image/png" href="logo-png.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="freehtml5.co" />
+
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="../css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="../css/flexslider.css">
+
+	<!-- Pricing -->
+	<link rel="stylesheet" href="../css/pricing.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="../js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-right">
+						<p class="site">Learn. Evolve. Succeed.</p>
+						<p class="num">Call: 9988776655</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-twitter2"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
+							<li><a href="#"><i class="icon-github"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo">
+							<a href="index.html">
+								<img src="../logo-transparent-png.png" alt="Gem Logo" class="logo-img">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../explore.html">Explore</a></li>
+							<li><a href="../features.html">Features</a></li>
+							<li><a href="../about.html">About</a></li>
+							<li><a href="../research-papers.html">Research Hub</a></li>
+							<li><a href="../blog.html">Blog</a></li>
+							<li><a href="../contact.html">Contact</a></li>
+							<li class="active"><a href="../pages/dashboard.html">Dashboard</a></li>
+							<li class="has-dropdown">
+								<a href="#" class="nav-username">User</a>
+								<ul class="dropdown">
+									<li><a href="../pages/profile.html">Profile</a></li>
+									<li><a href="../pages/dashboard.html">Dashboard</a></li>
+									<li><a href="../pages/certificates.html">Certificates</a></li>
+									<li><a href="#" onclick="logout()">Logout</a></li>
+								</ul>
+							</li>
+
+
+
+
+
+							
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	
+	
+
+	<div id="fh5co-dashboard" style="padding:60px 0;">
+		<div class="container">
+	
+			<!-- WELCOME -->
+			<div class="row text-center">
+				<div class="col-md-12">
+					<h2>
+						Welcome back, <span id="dashUser">Learner</span> 👋
+					</h2>
+					<p>Here’s your learning progress overview</p>
+				</div>
+			</div>
+	
+			<!-- STATS -->
+			<div class="row" style="margin-top:50px;">
+	
+				<!-- COURSES -->
+				<div class="col-md-4">
+					<div class="dashboard-card text-center">
+						<span class="icon"><i class="icon-book"></i></span>
+						<h3>Courses Enrolled</h3>
+						<p class="count" id="courseCount">0</p>
+						<a href="courses.html" class="btn btn-primary btn-sm">
+							View Courses
+						</a>
+					</div>
+				</div>
+	
+				<!-- QUIZZES -->
+				<div class="col-md-4">
+					<div class="dashboard-card text-center">
+						<span class="icon"><i class="icon-pencil"></i></span>
+						<h3>Quizzes Completed</h3>
+						<p class="count" id="quizCount">0</p>
+						<a href="../quiz.html" class="btn btn-success btn-sm">
+							Take Quiz
+						</a>
+					</div>
+				</div>
+	
+				<!-- CERTIFICATES -->
+				<div class="col-md-4">
+					<div class="dashboard-card text-center">
+						<span class="icon">
+							<i class="fa-solid fa-certificate"></i>
+
+						</span>
+
+						<h3>Certificates</h3>
+						<p class="count" id="certCount">0</p>
+						<a href="certificates.html" class="btn btn-warning btn-sm">
+							View Certificates
+						</a>
+					</div>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+	<!-- ENROLLED COURSES -->
+	<div class="row" style="margin-top:60px;">
+		<div class="col-md-12 text-center">
+			<h3>Your Enrolled Courses</h3>
+			<p>Continue learning from where you left off</p>
+		</div>
+	</div>
+	
+	<div class="row" id="enrolledCourses"></div>
+
+
+
+
+
+	
+
+	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+		  <div class="row row-pb-md">
+	  
+			<!-- ABOUT -->
+			<div class="col-md-4 fh5co-widget">
+			  <h3>About Career Spark</h3>
+			  <p>
+				Career Spark is a career guidance and learning platform that helps students explore
+				career paths, understand industry trends, and develop job-ready skills through
+				courses, quizzes, and research resources.
+			  </p>
+			</div>
+	  
+			<!-- QUICK LINKS -->
+			<div class="col-md-2 col-sm-4 col-xs-6 fh5co-widget">
+			  <h3>Quick Links</h3>
+			  <ul class="fh5co-footer-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="explore.html">Explore</a></li>
+				<li><a href="features.html">Features</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			  </ul>
+			</div>
+	  
+			<!-- LEARNING -->
+			<div class="col-md-3 col-sm-4 col-xs-6 fh5co-widget">
+			  <h3>Learning</h3>
+			  <ul class="fh5co-footer-links">
+				<li><a href="courses.html">Courses</a></li>
+				<li><a href="research-papers.html">Research Hub</a></li>
+				<li><a href="blog.html">Blog & Events</a></li>
+				<li><a href="features.html">Career Tools</a></li>
+			  </ul>
+			</div>
+	  
+			<!-- ACCOUNT -->
+			<div class="col-md-3 col-sm-4 col-xs-6 fh5co-widget">
+			  <h3>Account</h3>
+			  <ul class="fh5co-footer-links">
+				<li><a href="pages/login.html">Login</a></li>
+				<li><a href="pages/register.html">Register</a></li>
+				<li><a href="pages/dashboard.html">Dashboard</a></li>
+				<li><a href="contact.html">Support</a></li>
+			  </ul>
+			</div>
+	  
+		  </div>
+	  
+		  <!-- COPYRIGHT -->
+		  <div class="row copyright">
+			<div class="col-md-12 text-center">
+			  <p>
+				<small class="block">&copy; 2025 Career Spark. All Rights Reserved.</small>
+				<small class="block">
+				  Designed with <span style="color:red;">❤️</span> by Career Spark Team
+				</small>
+			  </p>
+			</div>
+		  </div>
+	  
+		</div>
+	  </footer>
+	  
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="../js/jquery.min.js"></script>
+	<script>
+		if (!localStorage.getItem("careerSparkUser")) {
+			window.location.href = "../pages/login.html";
+		}
+	</script>
+
+	<!-- jQuery Easing -->
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/dashboard.js"></script>
+
+	<!-- Waypoints -->
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="../js/jquery.stellar.min.js"></script>
+	<!-- Carousel -->
+	<script src="../js/owl.carousel.min.js"></script>
+	<!-- Flexslider -->
+	<script src="../js/jquery.flexslider-min.js"></script>
+	<!-- countTo -->
+	<script src="../js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../js/jquery.magnific-popup.min.js"></script>
+	<script src="../js/magnific-popup-options.js"></script>
+	<!-- Count Down -->
+	<script src="../js/simplyCountdown.js"></script>
+	<!-- Main -->
+	
+	
+	<script>
+		function logout() {
+			localStorage.clear();
+			window.location.href = "../index.html";
+		}
+	</script>
+
+
+	<style>/* Target the image inside the logo container */
+		#fh5co-logo .logo-img {
+			max-height: 90px; /* Adjust this value to control the size of your logo */
+			width: 200px;      /* Maintains the image's aspect ratio */
+			display: block;   /* Removes extra space below the image */
+		}
+		
+		/* Optional: Ensure the link container doesn't have conflicting styles */
+		#fh5co-logo a {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+		}
+		#fh5co-dashboard h2 span {
+			color: #3f6ad8;
+			font-weight: 600;
+		}
+
+		.dashboard-card {
+			background: #ffffff;
+			min-height: 260px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 30px 20px;
+			border-radius: 10px;
+			box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+			margin-bottom: 30px;
+		}
+
+		.dashboard-card .icon {
+			font-size: 32px;
+			color: #3f6ad8;
+			margin-bottom: 10px;
+			display: inline-block;
+		}
+
+		.dashboard-card h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+		.dashboard-card .count {
+			font-size: 36px;
+			font-weight: bold;
+			margin: 10px 0 20px;
+		}
+		.dashboard-card .btn {
+			width: 80%;
+			margin: 0 auto;
+			border-radius: 30px;
+		}
+		.dashboard-card .count {
+		 color: #6c757d;
+		}
+		.course-card {
+			background: #fff;
+			border-radius: 12px;
+			box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+			padding: 20px;
+			margin-bottom: 30px;
+		}
+
+		.course-card h4 {
+			margin-bottom: 5px;
+			font-weight: 600;
+		}
+
+		.course-card p {
+			color: #777;
+			font-size: 14px;
+		}
+
+		.progress {
+			height: 10px;
+			border-radius: 20px;
+			overflow: hidden;
+			margin: 10px 0 15px;
+		}
+
+		.progress-bar {
+		 background: #3f6ad8;
+		}
+
+
+
+
+	</style>
+	<script src="../js/main.js"></script>
+	</body>
+</html>
+
